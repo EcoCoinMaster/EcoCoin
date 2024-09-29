@@ -1,174 +1,109 @@
-/* Score Icon Styling */
-.score {
-    display: flex;
-    align-items: center; /* Center icon and score text vertically */
-    font-size: 32px;
-    margin: 10px 0;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 8px 15px;
-    border-radius: 30px;
-    position: relative;
-}
-
-.score-icon {
-    width: 50px; /* Adjust the size of the icon */
-    height: 50px;
-    margin-right: 10px; /* Space between icon and score */
-}
-
-/* General Styling for Layout */
-* {
-    box-sizing: border-box;
-}
-
+/* General styling */
 body {
     margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(90deg, #000000, #3533cd);  /* Background gradient */
     font-family: Arial, sans-serif;
-    background-color: #282c34;
-    color: #ffffff;
 }
 
 .game-container {
+    width: 100vw;
+    height: 100vh;
+    max-width: 400px;
+    max-height: 700px;
+    background: linear-gradient(90deg, #000000, #3533cd);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    position: relative;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    padding: 20px;
-    text-align: center;
-}
-
-.level {
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-/* Apple Container Adjustments */
-.apple-container {
-    position: relative;
-    width: 444px; /* Adjusted width for mobile */
-    height: 670px; /* Adjusted height for mobile */
-    margin: 20px 0;
-}
-
-/* Silver Background */
-.silver-background {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%; /* Full width of the apple container */
-    height: 100%; /* Full height of the apple container */
-    border-radius: 50%; /* Circular shape */
-    background-color: rgba(192, 192, 192, 1); /* Solid silver color */
-    transform: translate(-50%, -50%); /* Center the circle */
-}
-
-.apple-image {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 150px; /* Adjusted size for the apple image */
-    height: 150px; /* Adjusted size for the apple image */
-    z-index: 1; /* Ensure the apple is above other elements */
-}
-
-/* Bottom Section and Other Elements */
-.bottom-section {
-    display: flex;
     justify-content: space-between;
-    width: 100%;
-    max-width: 400px;
-    margin: 20px 0;
 }
 
-.clicks, .boost {
-    font-size: 18px;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 15px;
+/* User info */
+.user-info {
+    color: #fff;
+    font-size: 20px;
+    text-align: left;
+    font-style: italic;
+    margin-top: 50px;  /* Small margin for spacing */
+}
+
+/* Random message */
+.message-box {
+    background-color: #8c52ff;  /* Purple color */
+    padding: 10px;
     border-radius: 10px;
     text-align: center;
-    width: 48%;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: -20px;  /* Move message box upwards */
 }
 
-/* Button Section Styling */
-.button-section {
+/* Star logo */
+.logo-container {
     display: flex;
-    flex-direction: column; /* Stack buttons vertically */
-    width: 100%; /* Full width */
-    max-width: 400px; /* Limit width for larger screens */
-    margin: 20px 0; /* Space above and below */
+    justify-content: center;
+    margin-bottom: 10px;  /* Adjust margin for spacing */
 }
 
-button {
-    margin: 5px; /* Space between buttons */
-    padding: 10px; /* Padding for buttons */
-    font-size: 18px; /* Font size for buttons */
-    background-color: #4CAF50; /* Default background color */
-    color: white; /* Text color */
-    border: none; /* No border */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s; /* Smooth background transition */
+.logo-img {
+    width: 250px;
+    height: 250px;
 }
 
-button:hover {
-    background-color: #45a049; /* Darker green on hover */
+/* Coin display */
+.coin-display {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 10px;  /* Adjust for spacing */
 }
 
-/* Mobile Responsiveness */
-@media only screen and (max-width: 600px) {
-    .game-container {
-        padding: 10px;
-    }
-
-    .apple-container {
-        width: 200px;  
-        height: 200px; 
-    }
-
-    .bottom-section {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .clicks, .boost {
-        width: 100%; 
-        margin-bottom: 10px;
-        font-size: 16px;
-        padding: 10px; 
-    }
-
-    .button-section {
-        align-items: stretch; /* Stretch buttons to full width */
-    }
-
-    button {
-        width: 100%; /* Full width for buttons */
-        font-size: 16px; /* Smaller font size on mobile */
-    }
-}
-
-/* Style for the Boost button */
-.boost-button {
-    margin: 5px;
-    padding: 10px; /* Adjust padding for the boost button */
-    font-size: 18px;
-    background-color: #ff5722; /* Orange color */
-    color: white;
+/* Time button */
+.time-button {
+    display: block;
+    width: 100%;
+    padding: 18px;
+    background-color: #8c52ff;  /* Purple color */
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    border-radius: 10px;
+    font-size: 14px;
+    margin-bottom: 40px;  /* Move button upwards */
 }
 
-.boost-button:hover {
-    background-color: #e64a19;
+/* Menu buttons with round box */
+.menu-container {
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
 }
 
-.boost-button:disabled {
-    background-color: gray;
-    cursor: not-allowed;
+.round-box {
+    width: 50px;
+    height: 250px;
+    background-color: #8c52ff;  /* Purple color */
+    border-radius: 50px;
+    margin-right: 2px;
+}
+
+.menu {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.menu-icon {
+    width: 30px;
+    height: 30px;
+    margin: 15px 0;
 }
